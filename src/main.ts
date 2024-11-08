@@ -9,9 +9,20 @@ import {
   timeout,
   TransformAnimationPlugin,
   TransformControlsPlugin,
+  RepeatWrapping,
+  TextureLoader,
 } from 'threepipe'
 
+function renderApology() {
+  window.onload = function () {
+    // @ts-ignore
+    ApologyPage.render("root");
+  };
+}
+
 async function init() {
+  renderApology();
+
   const viewer = new ThreeViewer({
     canvas: document.getElementById('threepipe-canvas') as HTMLCanvasElement,
     msaa: false,
@@ -45,14 +56,48 @@ async function init() {
   const macbookScreen = macbook.getObjectByName('Bevels_2')!
   macbookScreen.name = 'Macbook Screen'
 
+
+  const mbpScreen = viewer.scene.getObjectByName('Object_7')?.material as PhysicalMaterial
+  const iPhoneScreen = viewer.scene.getObjectByName('xXDHkMplTIDAXLN')?.material as PhysicalMaterial
+
+  const wallpaperTexture1 = await new TextureLoader().loadAsync("/wallpaper1.jpg");
+  wallpaperTexture1.wrapS = RepeatWrapping;
+  wallpaperTexture1.wrapT = RepeatWrapping;
+  wallpaperTexture1.repeat.set(1, 1);
+
+  const wallpaperTexture2 = await new TextureLoader().loadAsync("/wallpaper2.jpg");
+  wallpaperTexture2.wrapS = RepeatWrapping;
+  wallpaperTexture2.wrapT = RepeatWrapping;
+  wallpaperTexture2.repeat.set(1, 1);
+
+  mbpScreen.emissiveMap = wallpaperTexture1;
+  iPhoneScreen.emissiveMap = wallpaperTexture2;
+  
+  mbpScreen.color.set(0, 0, 0);
+  mbpScreen.roughness = 0.2;
+  mbpScreen.metalness = 0.8;
+  mbpScreen.map = null;
+  mbpScreen.emissive.set(0.5, 0.5, 0.5);
+  mbpScreen.needsUpdate = true;
+
+  iPhoneScreen.color.set(0, 0, 0);
+  iPhoneScreen.roughness = 0.2;
+  iPhoneScreen.metalness = 0.8;
+  iPhoneScreen.map = null;
+  iPhoneScreen.emissive.set(0.2, 0.2, 0.2);
+  iPhoneScreen.needsUpdate = true;
+
+  mbpScreen.setDirty();
+  iPhoneScreen.setDirty();
+
   // Listen to when an image is dropped and set it as the emissive map for the screens.
   viewer.assetManager.addEventListener('loadAsset', (e)=>{
     if (!e.data?.isTexture) return
     const texture = e.data as ITexture
     texture.colorSpace = SRGBColorSpace
     // The file has different objects that have the material.
-    const mbpScreen = viewer.scene.getObjectByName('Object_7')?.material as PhysicalMaterial
-    const iPhoneScreen = viewer.scene.getObjectByName('xXDHkMplTIDAXLN')?.material as PhysicalMaterial
+    // const mbpScreen = viewer.scene.getObjectByName('Object_7')?.material as PhysicalMaterial
+    // const iPhoneScreen = viewer.scene.getObjectByName('xXDHkMplTIDAXLN')?.material as PhysicalMaterial
     console.log(mbpScreen, iPhoneScreen)
     if(!mbpScreen || !iPhoneScreen) return
     mbpScreen.color.set(0,0,0)
