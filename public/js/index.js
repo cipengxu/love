@@ -216,9 +216,7 @@ const init = () => {
 
 // Preload images and initialize animations after the images have loaded
 preloadImages(".grid__item-img").then(() => {
-  setTimeout(() => {
-    document.body.classList.remove("loading"); // Remove the 'loading' class from the body
-    init(); // Initialize the animations
-    window.scrollTo(0, 0); // Scroll to the top of the page on load
-  }, 1000);
+  document.body.classList.remove("loading"); // Remove the 'loading' class from the body
+  init(); // Initialize the animations
+  window.scrollTo(0, 0); // Scroll to the top of the page on load
 });
