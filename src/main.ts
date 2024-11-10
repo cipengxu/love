@@ -60,12 +60,12 @@ async function init() {
   const mbpScreen = viewer.scene.getObjectByName('Object_7')?.material as PhysicalMaterial
   const iPhoneScreen = viewer.scene.getObjectByName('xXDHkMplTIDAXLN')?.material as PhysicalMaterial
 
-  const wallpaperTexture1 = await new TextureLoader().loadAsync("/wallpaper1.jpg");
+  const wallpaperTexture1 = await new TextureLoader().loadAsync("/wallpaper1.jpg?v=3");
   wallpaperTexture1.wrapS = RepeatWrapping;
   wallpaperTexture1.wrapT = RepeatWrapping;
   wallpaperTexture1.repeat.set(1, 1);
 
-  const wallpaperTexture2 = await new TextureLoader().loadAsync("/wallpaper2.jpg");
+  const wallpaperTexture2 = await new TextureLoader().loadAsync("/wallpaper2.jpg?v=3");
   wallpaperTexture2.wrapS = RepeatWrapping;
   wallpaperTexture2.wrapT = RepeatWrapping;
   wallpaperTexture2.repeat.set(1, 1);
