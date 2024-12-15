@@ -913,7 +913,24 @@
           const [hearts, setHearts] = useState([]);
 
           const handleClickOpen = () => {
+            // 获取文档根元素
+            try {
+              const docElm = document.documentElement;
+              if (docElm.requestFullscreen) {
+                docElm.requestFullscreen();
+              } else if (docElm.webkitRequestFullscreen) {
+                // Safari
+                docElm.webkitRequestFullscreen();
+              } else if (docElm.msRequestFullscreen) {
+                // IE11
+                docElm.msRequestFullscreen();
+              }
+            } catch (error) {
+              console.log("请求全屏失败:", error);
+            }
+
             setStage(1);
+            
             const audio = document.getElementById("bgMusic");
             if (audio.paused) {
               audio.play().catch(function(error) {
