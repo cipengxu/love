@@ -992,11 +992,12 @@
 
           const handleReject = () => {
             setRejectionCount((prev) => prev + 1);
-            const button = document.querySelector(".reject-button");
+            const button = document.querySelector('.reject-button');
             if (button) {
-              button.style.transform = `scale(${
-                1 - rejectionCount * 0.1
-              }) translate(${Math.random() * 50}px, ${Math.random() * 50}px)`;
+              const scale = Math.max(0.5, 1 - rejectionCount * 0.1);
+              const randomX = Math.random() * 300 - 150;
+              const randomY = Math.random() * 300 - 150;
+              button.style.transform = `scale(${scale}) translate(${randomX}px, ${randomY}px)`;
             }
           };
 
@@ -1010,12 +1011,12 @@
               React.createElement(
                 "div",
                 {
-                  className: "text-center space-y-6 animate-fade-in",
+                  className: "text-center space-y-12 animate-fade-in",
                 },
                 React.createElement(
                   "h1",
                   {
-                    className: "text-4xl font-bold text-pink-600 mb-8",
+                    className: "text-6xl font-bold text-pink-600 mb-12",
                   },
                   "亲爱的老婆，我错了"
                 ),
@@ -1024,7 +1025,7 @@
                   {
                     onClick: handleClickOpen,
                     className:
-                      "px-8 py-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300",
+                      "px-12 py-8 text-3xl bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300 hover:scale-110 transform",
                   },
                   "点击开启我的真心道歉"
                 )
@@ -1035,17 +1036,17 @@
                 "div",
                 {
                   className:
-                    "max-w-md w-full bg-white rounded-xl shadow-2xl p-8 space-y-6 relative",
+                    "w-[85vw] max-w-6xl bg-white rounded-2xl shadow-2xl p-14 space-y-10 relative",
                 },
                 React.createElement(
                   "div",
                   {
-                    className: "text-center space-y-4",
+                    className: "text-center space-y-10",
                   },
                   React.createElement(
                     "h2",
                     {
-                      className: "text-2xl font-bold text-gray-800",
+                      className: "text-5xl font-bold text-gray-800 mb-10",
                     },
                     "我知道我做错了"
                   ),
@@ -1053,22 +1054,21 @@
                     "button",
                     {
                       className:
-                        "w-full p-4 bg-pink-400 rounded-lg hover:bg-pink-400 transition-all duration-300",
+                        "w-full p-12 bg-pink-400 rounded-xl hover:bg-pink-400 transition-all duration-300 text-3xl leading-relaxed text-white",
                     },
-                    null,
-                    "我的佳慧，我深刻的认识到自己那天做的决定真的太离谱了，为了自己能早点回公司，假借分手的名义让你快点离开，从来没有想过这么做会给你带来多大的伤害与痛苦，我为我的错误，郑重地向你道歉，原谅我吧，宝宝，其实你心里也清楚我，怎么会舍得你离开我呢，我们都是这么多磨难中成长过来的，我虽说不是那种富可敌国的CEO总裁，目前不能给予你充足的财富保障，可是我愿意用自己最擅长的方式去努力改变这一切，而且很有信心，更何况我对你的一片真心是没有谁能替代的，未来我们都会越来越好的，我的小宝儿。" // 查看我们的回忆
+                    "我的佳慧，我深刻的认识到自己那天做的决定真的太离谱了，为了自己能早点回公司，假借分手的名义让你快点离开，从来没有想过这么做会给你带来多大的伤害与痛苦，我为我的错误，郑重地向你道歉，原谅我吧，宝宝，其实你心里也清楚我，怎么会舍得你离开我呢，我们都是这么多磨难中成长过来的，我虽说不是那种富可敌国的CEO总裁，目前不能给予你充足的财富保障，可是我愿意用自己最擅长的方式去努力改变这一切，而且很有信心，更何况我对你的一片真心是没有谁能替代的，未来我们都会越来越好的，我的小宝儿。"
                   ),
                   React.createElement(
                     "div",
                     {
-                      className: "flex justify-center space-x-4",
+                      className: "flex justify-center space-x-10 mt-10",
                     },
                     React.createElement(
                       "button",
                       {
                         onClick: () => setStage(2),
                         className:
-                          "px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600",
+                          "px-20 py-10 text-3xl bg-pink-500 text-white rounded-full hover:bg-pink-600 font-bold",
                       },
                       "原谅我吧"
                     ),
@@ -1077,7 +1077,7 @@
                       {
                         onClick: handleReject,
                         className:
-                          "reject-button px-6 py-3 bg-gray-300 text-gray-600 rounded-full hover:bg-gray-400",
+                          "reject-button px-20 py-10 text-3xl bg-gray-300 text-gray-600 rounded-full hover:bg-gray-400 font-bold transition-transform duration-300",
                       },
                       "再考虑考虑"
                     )
