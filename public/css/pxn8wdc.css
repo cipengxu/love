@@ -16,16 +16,13 @@
  */
 /*{"last_published":"2024-10-16 07:50:44 UTC"}*/
 
-@import url("https://p.typekit.net/p.css?s=1&k=pxn8wdc&ht=tk&f=28317.52530.52531.58264&a=1494256&app=typekit&e=css");
+/* @import url("https://p.typekit.net/p.css?s=1&k=pxn8wdc&ht=tk&f=28317.52530.52531.58264&a=1494256&app=typekit&e=css"); */
 
 @font-face {
   font-family: "lores-12";
-  src: url("https://use.typekit.net/af/84d9ce/00000000000000007735bf82/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("woff2"),
-    url("https://use.typekit.net/af/84d9ce/00000000000000007735bf82/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("woff"),
-    url("https://use.typekit.net/af/84d9ce/00000000000000007735bf82/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("opentype");
+  src: url("/font/lores-12.woff2") format("woff2"),
+    url("/font/lores-12.woff") format("woff"),
+    url("/font/lores-12.otf") format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 400;
@@ -34,12 +31,9 @@
 
 @font-face {
   font-family: "sztos-variable";
-  src: url("https://use.typekit.net/af/7c353d/0000000000000000774d3ebb/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("woff2"),
-    url("https://use.typekit.net/af/7c353d/0000000000000000774d3ebb/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("woff"),
-    url("https://use.typekit.net/af/7c353d/0000000000000000774d3ebb/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("opentype");
+  src: url("/font/sztos-variable.woff2") format("woff2"),
+    url("/font/sztos-variable.woff") format("woff"),
+    url("/font/sztos-variable.otf") format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 400;
@@ -48,12 +42,9 @@
 
 @font-face {
   font-family: "sztos-variable";
-  src: url("https://use.typekit.net/af/571941/0000000000000000774d3eba/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
-      format("woff2"),
-    url("https://use.typekit.net/af/571941/0000000000000000774d3eba/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
-      format("woff"),
-    url("https://use.typekit.net/af/571941/0000000000000000774d3eba/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
-      format("opentype");
+  src: url("/font/sztos-variable-italic.woff2") format("woff2"),
+    url("/font/sztos-variable-italic.woff") format("woff"),
+    url("/font/sztos-variable-italic.otf") format("opentype");
   font-display: auto;
   font-style: italic;
   font-weight: 400;
@@ -62,12 +53,9 @@
 
 @font-face {
   font-family: "brisbane";
-  src: url("https://use.typekit.net/af/9a8bb8/00000000000000007757292e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("woff2"),
-    url("https://use.typekit.net/af/9a8bb8/00000000000000007757292e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("woff"),
-    url("https://use.typekit.net/af/9a8bb8/00000000000000007757292e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
-      format("opentype");
+  src: url("/font/brisbane.woff2") format("woff2"),
+    url("/font/brisbane.woff") format("woff"),
+    url("/font/brisbane.otf") format("opentype");
   font-display: auto;
   font-style: normal;
   font-weight: 400;

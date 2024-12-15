@@ -21,6 +21,9 @@
     <title>徐赐朋❤️彭佳慧</title>
   </head>
   <body class="loading">
+    <!-- 添加 preload 和 muted 属性，并使用 JavaScript 控制播放 -->
+    <audio id="bgMusic" src="/music/1.mp3" preload="auto" loop></audio>
+
     <div id="root"></div>
 
     <main id="album" class="shadow">
@@ -909,6 +912,16 @@
           const [rejectionCount, setRejectionCount] = useState(0);
           const [hearts, setHearts] = useState([]);
 
+          const handleClickOpen = () => {
+            setStage(1);
+            const audio = document.getElementById("bgMusic");
+            if (audio.paused) {
+              audio.play().catch(function(error) {
+                console.log("播放失败:", error);
+              });
+            }
+          };
+
           const setShowMemories = () => {
             const root = document.getElementById("root");
             root.style.display = "none";
@@ -992,7 +1005,7 @@
                 React.createElement(
                   "button",
                   {
-                    onClick: () => setStage(1),
+                    onClick: handleClickOpen,
                     className:
                       "px-8 py-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition-all duration-300",
                   },
